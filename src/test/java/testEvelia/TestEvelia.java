@@ -42,18 +42,18 @@ public class TestEvelia {
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
 		//System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
 		//File operaFile = new File("./drivers/operadriver");
 		
 		//System.setProperty("webdriver.opera.driver", "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/drivers/operadriver");
 		//System.setProperty("webdriver.edge.driver", "./drivers/msedgedriver");
-		//System.setProperty("webdriver.opera.driver", "./drivers/operadriver");
+		System.setProperty("webdriver.opera.driver", "./drivers/operadriver");
 		
 		//WebDriver driver = new SafariDriver();
-		driver = new ChromeDriver();
+		//driver = new ChromeDriver();
 		//driver = new FirefoxDriver();
-		//driver = new OperaDriver();
+		driver = new OperaDriver();
 		//driver = new EdgeDriver();
 		driver.manage().window().maximize();
 		
@@ -73,7 +73,7 @@ public class TestEvelia {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	//@Test
+	@Test
 	public void iniciarSesionDocente() throws IOException, InterruptedException {
 		TestIniciarSesion.iniciarSesion(true);
 	}
@@ -123,7 +123,7 @@ public class TestEvelia {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	@Test
+	//@Test
 	public void entrarAulaTestIRCDocente() throws IOException, InterruptedException {
 		TestIniciarSesion.entrarAulaTestIRC(true);
 	}
