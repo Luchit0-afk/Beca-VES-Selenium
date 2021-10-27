@@ -46,7 +46,7 @@ public class TestEvelia {
 		//System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
 		//File operaFile = new File("./drivers/operadriver");
 		//testtestTest
-		//test
+		//testasd
 		//System.setProperty("webdriver.opera.driver", "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/drivers/operadriver");
 		//System.setProperty("webdriver.edge.driver", "./drivers/msedgedriver");
 		System.setProperty("webdriver.opera.driver", "./drivers/operadriver");
