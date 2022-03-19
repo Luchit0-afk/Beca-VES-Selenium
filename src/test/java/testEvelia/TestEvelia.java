@@ -42,7 +42,7 @@ public class TestEvelia {
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
-		//System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
 		//System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
 		//File operaFile = new File("./drivers/operadriver");
 		//testtestTest
@@ -52,12 +52,12 @@ public class TestEvelia {
 		
 		//System.setProperty("webdriver.opera.driver", "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/drivers/operadriver");
 		//System.setProperty("webdriver.edge.driver", "./drivers/msedgedriver");
-		System.setProperty("webdriver.opera.driver", "./drivers/operadriver");
+		//System.setProperty("webdriver.opera.driver", "./drivers/operadriver");
 		
 		//WebDriver driver = new SafariDriver();
-		//driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		//driver = new FirefoxDriver();
-		driver = new OperaDriver();
+		//driver = new OperaDriver();
 		//driver = new EdgeDriver();
 		driver.manage().window().maximize();
 		
@@ -77,7 +77,7 @@ public class TestEvelia {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	@Test
+	//@Test
 	public void iniciarSesionDocente() throws IOException, InterruptedException {
 		TestIniciarSesion.iniciarSesion(true);
 	}
@@ -137,10 +137,12 @@ public class TestEvelia {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	//@Test
+	@Test
 	public void crearActividadSimulacroEvaluaciones() throws IOException, InterruptedException {
-		TestActividad.crearActividadEnSimulacroEvaluaciones("TituloActividadTest",true,true,"/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/subirArchivoAct");
-		TestActividad.entregarActividadEnSimulacroEvaluaciones("/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/entregaActividad");
+		//TestActividad.crearActividadEnSimulacroEvaluaciones("TituloActividadTest",true,true,"/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/subirArchivoAct");
+		TestActividad.crearActividadEnSimulacroEvaluaciones("TituloActividadTest",true,true,"/home/agustin/Escritorio/Repositorios/Beca-VES./subirArchivoAct");
+		//TestActividad.entregarActividadEnSimulacroEvaluaciones("/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/entregaActividad");
+		TestActividad.entregarActividadEnSimulacroEvaluaciones("/home/agustin/Escritorio/Repositorios/Beca-VES./entregaActividad");
 	}
 	
 	/**
@@ -150,7 +152,8 @@ public class TestEvelia {
 	 */
 	//@Test
 	public void subirMaterialesSimulacroEvaluaciones() throws IOException, InterruptedException {
-		TestMateriales.subirMaterialesSimulacroEvaluaciones("MaterialSubidoEclipse","/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/testMaterialNuevo");
+		//TestMateriales.subirMaterialesSimulacroEvaluaciones("MaterialSubidoEclipse","/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/testMaterialNuevo");
+		TestMateriales.subirMaterialesSimulacroEvaluaciones("MaterialSubidoEclipse","/home/agustin/Escritorio/Repositorios/Beca-VES./testMaterialNuevo");
 	}
 	
 	/**
@@ -165,7 +168,9 @@ public class TestEvelia {
 	
 	//@Test
 	public void crearNoticiaEnSimulacroEvaluaciones() throws IOException, InterruptedException{
-		TestNoticias.publicarNoticiaSimulacroEvaluaciones("Notica Test","/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/archivoNoticia",true,true);
+		//TestNoticias.publicarNoticiaSimulacroEvaluaciones("Notica Test","/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/archivoNoticia",true,true);
+		TestNoticias.publicarNoticiaSimulacroEvaluaciones("Notica Test","/home/agustin/Escritorio/Repositorios/Beca-VES./archivoNoticia",true,true);
+		
 	}
 }
 

@@ -6,7 +6,6 @@
 package testEvelia;
 
 import static org.junit.Assert.fail;
-import static testEvelia.TestIniciarSesion.*;
 import static testEvelia.TestEvelia.*;
 
 import java.io.IOException;
@@ -36,8 +35,6 @@ public class TestEvaluaciones {
 	private static By alcanceNuevoExamLocator = By.xpath("//*[@id=\"AlcanceExamen\"]");
 	private static By descripNuevoExamLocator = By.xpath("/html");
 	private static By genAutomNuevoExamLocator = By.xpath("//*[@id=\"configEx\"]/div[20]/div[2]/label");
-	private static By crearNuevoExamLocator = By.xpath("//*[@id=\"aceptarConfigEx\"]");
-	private static By cancelarNuevoExamLocator = By.xpath("//*[@id=\"BTN_CrearEA20\"]");
 	
 	/**
 	 * Metodo que crea una evaluacion en el aula <b>"Simulacro Evaluaciones (030518) - 2018"</b>.
@@ -58,12 +55,6 @@ public class TestEvaluaciones {
 	 */
 	public static void hacerEvaluacionSimulacroEvaluaciones(String tituloEvaluacion,boolean entrAuto,String duracionEvaluacion,String horaAdvertenciaEvaluacion,String notaAprobEvaluacion,boolean mostrRespue,boolean orgPreg,boolean ordenPreg,boolean pregAleat,String descripcionEvaluacion,boolean evenAutom) throws IOException, InterruptedException {
 		TestIniciarSesion.entrarAulaSimulacroEvaluaciones(true);
-		
-		//String tituloEvaluacion = "Evaluacion creada desde eclipse";
-		//String duracionEvaluacion = "03:00";
-		//String horaAdvertenciaEvaluacion = "00:01:00";
-		//String notaAprobEvaluacion = "7.0";
-		//String descripcionEvaluacion = "Evaluacion de test";
 		
 		driver.findElement(evaluacionesLocator).click();
 		

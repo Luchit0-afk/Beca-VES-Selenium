@@ -6,7 +6,6 @@
 package testEvelia;
 
 import static org.junit.Assert.fail;
-import static testEvelia.TestIniciarSesion.*;
 import static testEvelia.TestEvelia.*;
 
 import java.io.File;

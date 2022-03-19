@@ -6,7 +6,7 @@
 package testEvelia;
 
 import static org.junit.Assert.fail;
-import static testEvelia.TestIniciarSesion.*;
+//import static testEvelia.TestIniciarSesion.*;
 import static testEvelia.TestEvelia.*;
 
 import java.io.File;
@@ -85,7 +85,7 @@ public class TestActividad {
 					driver.findElement(generarEventoLocator).click();
 				}
 				
-				//driver.findElement(crearActividadLocator).click();
+				driver.findElement(crearActividadLocator).click();
 				
 			}
 			else {
@@ -118,8 +118,10 @@ public class TestActividad {
 			if(driver.findElement(enviarActividadTituloLocator).isDisplayed()) {
 				System.out.println("Se deben actividades");
 				
-				String filePathDatosActividad = "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/datosActividad.xlsx";
+				//String filePathDatosActividad = "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/datosActividad.xlsx";
+				String filePathDatosActividad = "/home/agustin/Escritorio/Repositorios/Beca-VES./datosActividad.xlsx";
 				String tituloActividad = readExcelFile.getCellValue(filePathDatosActividad, "Hoja1", 1, 0);
+				//readExcelFile.getCellValue(filePathDatosActividad, "Hoja1", 1, 0);
 				
 				driver.findElement(actividadPendienteLocator).click();
 				

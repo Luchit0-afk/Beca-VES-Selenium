@@ -35,7 +35,8 @@ public class TestIniciarSesion {
 	 * Usa un archivo externo .xlsx para extraer datos de ingreso al aula.
 	 */
 	public static void iniciarSesion(boolean esDocente) throws IOException, InterruptedException {
-		String filePathDatosUsuario = "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/datosEvelia.xlsx";
+		//String filePathDatosUsuario = "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/datosEvelia.xlsx";
+		String filePathDatosUsuario = "/home/agustin/Escritorio/Repositorios/Beca-VES./datosEvelia.xlsx";
 		String usuario;
 		String contraseña;
 		if(esDocente) {
