@@ -109,4 +109,51 @@ public class TestIniciarSesion {
 		}
 	}
 	
+	/**
+	 * Metodo que inicia sesion como docente o alumno a evelia.
+	 * @param esDocente true para entrar como docente, false para entrar como alumno.
+	 * Usa un archivo externo .xlsx para extraer datos de ingreso al aula.
+	 */
+	public static void iniciarSesionConParametros(String usuario, String contrasenia) throws IOException, InterruptedException {
+		
+		driver.findElement(usuarioLocator).sendKeys(usuario);
+		driver.findElement(contraseñaLocator).sendKeys(contrasenia);
+		driver.findElement(iniciarSesionLocator).click();
+		
+		Thread.sleep(1000);
+		
+		if(driver.findElement(paginaInicialEveliaLocator).isDisplayed()) {
+			System.out.println("Ingreso correcto a Evelia");
+		}
+		else {
+			fail("Error al ingresar a Evelia");
+		}
+	}
+	
+	/**
+	 * Metodo que entrar al aula <b>"Simulacro Evaluaciones (030518) - 2018"</b>.
+	 * @param esDocente true para entrar como docente, false para entrar como alumno.
+	 * Usa el metodo <i> iniciarSesion(esDocente) </i> para iniciar sesion en evelia.
+	 */
+//	public static void entrarAulaSimulacroEvaluacionesConParametros(String Usuario, String Contrasenia) throws IOException, InterruptedException {
+//		iniciarSesion(esDocente);
+//		
+//		if(esDocente) {
+//			driver.findElement(simulacroEvaluacionesDocenteLocator).click();
+//		}
+//		else {
+//			driver.findElement(simulacroEvaluacionesAlumnoLocator).click();
+//		}
+//		Thread.sleep(1000);
+//		
+//		if(driver.findElement(dentroDeAulaVirtualLocator).isDisplayed()) {
+//			System.out.println("Ingreso correcto al aula de Simulacro De Evaluaciones");
+//		}
+//		else {
+//			fail("Error al ingresar al aula de Simulacro De Evaluaciones");
+//		}
+//	}
+	
+	
+	
 }
