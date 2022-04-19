@@ -176,8 +176,9 @@ public class TestEvelia {
 	
 	@Test
 	public void rendirExamen() throws IOException, InterruptedException {
-		RendirExamen.opcionMultiple(5, new int[] {1, 2, 1, 2, 2});
-		//RendirExamen.verdaderoFalso(2, new boolean[] {true, false});
+		//RendirExamen.opcionMultiple(4, new int[] {1, 2, 1, 2});
+		//RendirExamen.verdaderoFalso(4, new boolean[] {true, false, true, false});
+		RendirExamen.formatoTabla(3, 3, new int[][] {{1, 2, 3}, {1, 3, 2}, {3, 1, 2}});
 	}
 }
 

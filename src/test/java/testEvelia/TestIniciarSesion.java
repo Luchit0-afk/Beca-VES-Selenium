@@ -36,9 +36,7 @@ public class TestIniciarSesion {
 	private static By iniciarSesion = By.xpath("//*[@id=\"Ingresar\"]");
 	// Aula: testing automatizado
 	
-	private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[3]/a/b");
-	//private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[3]/a/i");
-	//private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[3]");
+	private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[4]/a/b");
 	
 	// Comision: testing automatizado
 	private static By comision = By.xpath("//*[@id=\"contenido\"]/b[5]/a");
@@ -66,8 +64,6 @@ public class TestIniciarSesion {
 			
 			usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 8);
 			contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 8);
-			System.out.println(usuario);
-			System.out.println(contraseña);
 		}
 		//driver.findElement(usuarioLocator).sendKeys(usuario);
 		//driver.findElement(contraseñaLocator).sendKeys(contraseña);
@@ -137,9 +133,9 @@ public class TestIniciarSesion {
 	public static void entrarAulaTestingAutomatizadoAlumno() throws IOException, InterruptedException {
 		iniciarSesion(false);
 		
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		driver.findElement(aula).click();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		driver.findElement(comision).click();
 		
 	}
