@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Mar 20 13:46:29 ART 2022</td>
+<td>Started on:</td><td>Thu Apr 07 18:32:37 ART 2022</td>
 </tr>
-<tr><td>Total time:</td><td>151 seconds (151337 ms)</td>
+<tr><td>Total time:</td><td>7 seconds (7480 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testEvelia.TestEvelia.crearActividadSimulacroEvaluaciones()'><b>crearActividadSimulacroEvaluaciones</b><br>Test class: testEvelia.TestEvelia</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;contenido&quot;]/div[4]/div[1]/center/button[1]&quot;}
+<td title='testEvelia.TestEvelia.rendirExamen()'><b>rendirExamen</b><br>Test class: testEvelia.TestEvelia</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;contenido&quot;]/ul[2]/li[3]&quot;}
   (Session info: chrome=99.0.4844.74)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;agustin-Lenovo-ideapad-FLEX-5-1570&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.13.0-30-generic&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;agustin-Lenovo-ideapad-FLEX-5-1570&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.13.0-39-generic&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.74, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /tmp/.com.google.Chrome.EqaOs8}, goog:chromeOptions: {debuggerAddress: localhost:34771}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 89389b3f8377db58d9b5b8193352efb3
-*** Element info: {Using=xpath, value=//*[@id=&quot;contenido&quot;]/div[4]/div[1]/center/button[1]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.74, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /tmp/.com.google.Chrome.C8iSgG}, goog:chromeOptions: {debuggerAddress: localhost:39361}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 00926b9f063921292c295550237ccb76
+*** Element info: {Using=xpath, value=//*[@id=&quot;contenido&quot;]/ul[2]/li[3]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -100,8 +100,10 @@ Session ID: 89389b3f8377db58d9b5b8193352efb3
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at testEvelia.TestActividad.crearActividadEnSimulacroEvaluaciones(TestActividad.java:88)
-	at testEvelia.TestEvelia.crearActividadSimulacroEvaluaciones(TestEvelia.java:143)
+	at testEvelia.TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno(TestIniciarSesion.java:139)
+	at testEvelia.RendirExamen.ingresoExamen(RendirExamen.java:45)
+	at testEvelia.RendirExamen.opcionMultiple(RendirExamen.java:54)
+	at testEvelia.TestEvelia.rendirExamen(TestEvelia.java:179)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -130,16 +132,16 @@ Session ID: 89389b3f8377db58d9b5b8193352efb3
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1056953587", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1056953587'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;contenido&quot;]/div[4]/div[1]/center/button[1]&quot;}
+</pre></div><a href='#' onClick='toggleBox("stack-trace887230059", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace887230059'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;contenido&quot;]/ul[2]/li[3]&quot;}
   (Session info: chrome=99.0.4844.74)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;agustin-Lenovo-ideapad-FLEX-5-1570&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.13.0-30-generic&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;agustin-Lenovo-ideapad-FLEX-5-1570&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.13.0-39-generic&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.74, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /tmp/.com.google.Chrome.EqaOs8}, goog:chromeOptions: {debuggerAddress: localhost:34771}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 89389b3f8377db58d9b5b8193352efb3
-*** Element info: {Using=xpath, value=//*[@id=&quot;contenido&quot;]/div[4]/div[1]/center/button[1]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.74, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /tmp/.com.google.Chrome.C8iSgG}, goog:chromeOptions: {debuggerAddress: localhost:39361}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 00926b9f063921292c295550237ccb76
+*** Element info: {Using=xpath, value=//*[@id=&quot;contenido&quot;]/ul[2]/li[3]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -155,8 +157,10 @@ Session ID: 89389b3f8377db58d9b5b8193352efb3
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at testEvelia.TestActividad.crearActividadEnSimulacroEvaluaciones(TestActividad.java:88)
-	at testEvelia.TestEvelia.crearActividadSimulacroEvaluaciones(TestEvelia.java:143)
+	at testEvelia.TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno(TestIniciarSesion.java:139)
+	at testEvelia.RendirExamen.ingresoExamen(RendirExamen.java:45)
+	at testEvelia.RendirExamen.opcionMultiple(RendirExamen.java:54)
+	at testEvelia.TestEvelia.rendirExamen(TestEvelia.java:179)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -186,8 +190,8 @@ Session ID: 89389b3f8377db58d9b5b8193352efb3
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>137</td>
-<td>testEvelia.TestEvelia@7fee8714</td></tr>
+<td>4</td>
+<td>testEvelia.TestEvelia@4229bb3f</td></tr>
 </table><p>
 </body>
 </html>

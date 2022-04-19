@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testEvelia.TestEvelia" class="method navigator-link" hash-for-method="crearActividadSimulacroEvaluaciones">crearActividadSimulacroEvaluaciones</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testEvelia.TestEvelia" class="method navigator-link" hash-for-method="rendirExamen">rendirExamen</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -127,18 +127,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="crearActividadSimulacroEvaluaciones">
-                  </a> <!-- crearActividadSimulacroEvaluaciones -->
-                  <span class="method-name">crearActividadSimulacroEvaluaciones</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;contenido&quot;]/div[4]/div[1]/center/button[1]&quot;}
+                  <a name="rendirExamen">
+                  </a> <!-- rendirExamen -->
+                  <span class="method-name">rendirExamen</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;contenido&quot;]/ul[2]/li[3]&quot;}
   (Session info: chrome=99.0.4844.74)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;agustin-Lenovo-ideapad-FLEX-5-1570&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.13.0-30-generic&apos;, java.version: &apos;15.0.2&apos;
+System info: host: &apos;agustin-Lenovo-ideapad-FLEX-5-1570&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.13.0-39-generic&apos;, java.version: &apos;15.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.74, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /tmp/.com.google.Chrome.EqaOs8}, goog:chromeOptions: {debuggerAddress: localhost:34771}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 89389b3f8377db58d9b5b8193352efb3
-*** Element info: {Using=xpath, value=//*[@id=&quot;contenido&quot;]/div[4]/div[1]/center/button[1]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.74, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /tmp/.com.google.Chrome.C8iSgG}, goog:chromeOptions: {debuggerAddress: localhost:39361}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 00926b9f063921292c295550237ccb76
+*** Element info: {Using=xpath, value=//*[@id=&quot;contenido&quot;]/ul[2]/li[3]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -154,8 +154,10 @@ Session ID: 89389b3f8377db58d9b5b8193352efb3
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at testEvelia.TestActividad.crearActividadEnSimulacroEvaluaciones(TestActividad.java:88)
-	at testEvelia.TestEvelia.crearActividadSimulacroEvaluaciones(TestEvelia.java:143)
+	at testEvelia.TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno(TestIniciarSesion.java:139)
+	at testEvelia.RendirExamen.ingresoExamen(RendirExamen.java:45)
+	at testEvelia.RendirExamen.opcionMultiple(RendirExamen.java:54)
+	at testEvelia.TestEvelia.rendirExamen(TestEvelia.java:179)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -193,7 +195,7 @@ Session ID: 89389b3f8377db58d9b5b8193352efb3
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/tmp/testng-eclipse--1026119992/testng-customsuite.xml</span>
+            <span class="header-content">/tmp/testng-eclipse--1765088195/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -244,14 +246,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'crearActividadSimulacroEvaluaciones')
+data.setCell(0, 1, 'rendirExamen')
 data.setCell(0, 2, 'testEvelia.TestEvelia')
-data.setCell(0, 3, 137160);
+data.setCell(0, 3, 4934);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -285,12 +287,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">crearActividadSimulacroEvaluaciones</span>
-                <span class="method-start">14044 ms</span>
+                <span class="method-name">rendirExamen</span>
+                <span class="method-start">2415 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">151208 ms</span>
+                <span class="method-start">7357 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
