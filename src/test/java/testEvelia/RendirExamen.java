@@ -7,10 +7,11 @@ import static testEvelia.TestEvelia.*;
 
 import org.openqa.selenium.By;
 
-import junit.framework.Assert;
+import testEvelia.Paths.*;
 
 public class RendirExamen {
-	
+	/*
+	// BOTONES - SERVIDOR DE PRUEBA
 	// Botones comunes
 	private static By evaluaciones = By.xpath("//*[@id=\"listado\"]/div[14]/a");
 	private static By rendirExamen = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr/td[4]/center/button");
@@ -28,12 +29,15 @@ public class RendirExamen {
 	// Botones de respuesta numerica
 	private static By escribir = By.xpath("//*[@id=\"rtaNC1\"]");
 	// APRENDER A ESCRIBIR O PASAR CADENAS POR EXCEL
+	*/
 	
 	private static void ingresoExamen() throws IOException, InterruptedException {
-		TestIniciarSesion.entrarAulaSimulacroEvaluaciones(false);
+		//TestIniciarSesion.entrarAulaSimulacroEvaluaciones(false);
+		TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
 		
-		driver.findElement(evaluaciones).click();
-		driver.findElement(rendirExamen).click();
+		driver.findElement(Paths.evaluaciones).click();
+		driver.findElement(Paths.rendirExamen).click();
+		//driver.findElement(Paths.rendirExamen2).click();
 	}
 	
 	// OPCION MULTIPLE CON DOS RESPUESTAS
@@ -43,34 +47,60 @@ public class RendirExamen {
 		
 		for (int i = 0; i < cantidadPreguntas; i++) {
 			if (respuestas[i] == 1) {
-				driver.findElement(opcionUno).click();
+				driver.findElement(Paths.opcionUno).click();
+				//Thread.sleep(500);
 			} else {
-				driver.findElement(opcionDos).click();
+				driver.findElement(Paths.opcionDos).click();
+				//Thread.sleep(500);
 			}
-			driver.findElement(siguiente).click();
+			driver.findElement(Paths.siguiente).click();
+			//Thread.sleep(500);
 		}
 		
-		driver.findElement(entregar).click();
+		driver.findElement(Paths.entregar).click();
+		//Thread.sleep(500);
+		//driver.switchTo().alert().accept();
 		
+		System.out.println("Evaluacion rendida exitosamente");
 	}
 	
-	// FALLA
 	public static void verdaderoFalso(int cantidadPreguntas, boolean[] respuestas) throws IOException, InterruptedException {
 		
 		ingresoExamen();
 		
 		for (int i = 0; i < cantidadPreguntas; i++) {
 			if (respuestas[i] == true) {
-				driver.findElement(verdadero).click();
+				driver.findElement(Paths.verdadero).click();
 			} else {
-				driver.findElement(falso).click();
+				driver.findElement(Paths.falso).click();
 			}
-			driver.findElement(siguiente).click();
+			driver.findElement(Paths.siguiente).click();
 		}
 
-		driver.findElement(entregar).click();
+		driver.findElement(Paths.entregar).click();
 	}
 	
-	
+	public static void formatoTabla(int cantidadPreguntas, int cantidadOpciones, int[][] respuestas) throws IOException, InterruptedException {
+		
+		ingresoExamen();
+		
+		// PENSAR BIEN
+		for (int i = 0; i < cantidadPreguntas; i++) {
+			for (int j = 0; j < cantidadOpciones; j++) {
+				if (respuestas[i][j] == 1) {
+					driver.findElement(Paths.preguntaXOpcionY(i+1,1+1)).click();
+				} else {
+					if (respuestas[i][j] == 2) {
+						driver.findElement(Paths.preguntaXOpcionY(i+1,2+1)).click();
+					} else {
+						driver.findElement(Paths.preguntaXOpcionY(i+1,3+1)).click();
+					}
+				}
+			}
+			driver.findElement(Paths.siguiente).click();
+		}
+		driver.findElement(Paths.entregar).click();
+		
+	}
 
 }

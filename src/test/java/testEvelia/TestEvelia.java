@@ -64,7 +64,8 @@ public class TestEvelia {
 		writeExcelFile = new WriteExcelFile();
 		readExcelFile = new ReadExcelFile();
 		
-		driver.get("https://prueba.evelia.unrc.edu.ar/siat2Responsivo/");
+		//driver.get("https://prueba.evelia.unrc.edu.ar/siat2Responsivo/");
+		driver.get("https://server3.evelia.unrc.edu.ar/eveliajunit/index.jsp");
 	}
 
 	@AfterMethod
@@ -137,7 +138,7 @@ public class TestEvelia {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	@Test
+	//@Test
 	public void crearActividadSimulacroEvaluaciones() throws IOException, InterruptedException {
 		//TestActividad.crearActividadEnSimulacroEvaluaciones("TituloActividadTest",true,true,"/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/subirArchivoAct");
 		TestActividad.crearActividadEnSimulacroEvaluaciones("TituloActividadTest",true,true,"/home/agustin/Escritorio/Repositorios/Beca-VES./subirArchivoAct");
@@ -171,6 +172,13 @@ public class TestEvelia {
 		//TestNoticias.publicarNoticiaSimulacroEvaluaciones("Notica Test","/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/archivoNoticia",true,true);
 		TestNoticias.publicarNoticiaSimulacroEvaluaciones("Notica Test","/home/agustin/Escritorio/Repositorios/Beca-VES./archivoNoticia",true,true);
 		
+	}
+	
+	@Test
+	public void rendirExamen() throws IOException, InterruptedException {
+		//RendirExamen.opcionMultiple(4, new int[] {1, 2, 1, 2});
+		//RendirExamen.verdaderoFalso(4, new boolean[] {true, false, true, false});
+		RendirExamen.formatoTabla(3, 3, new int[][] {{1, 2, 3}, {1, 3, 2}, {3, 1, 2}});
 	}
 }
 

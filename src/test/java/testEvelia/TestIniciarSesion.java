@@ -29,6 +29,19 @@ public class TestIniciarSesion {
 	private static By iniciarSesionLocator = By.xpath("//*[@id=\"Ingresar\"]/b");
 	private static By paginaInicialEveliaLocator = By.xpath("//*[@id=\"contenido\"]/div[4]/h4");
 	
+	//BOTONES DEL SERVIDOR NUEVOS
+	// REVISAR !!! SON IGUALES
+	private static By usuario2 = By.xpath("//*[@id=\"login\"]");
+	private static By contraseña2 = By.xpath("//*[@id=\"clave\"]");
+	private static By iniciarSesion = By.xpath("//*[@id=\"Ingresar\"]");
+	// Aula: testing automatizado
+	
+	private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[4]/a/b");
+	
+	// Comision: testing automatizado
+	private static By comision = By.xpath("//*[@id=\"contenido\"]/b[5]/a");
+	
+	
 	/**
 	 * Metodo que inicia sesion como docente o alumno a evelia.
 	 * @param esDocente true para entrar como docente, false para entrar como alumno.
@@ -37,6 +50,7 @@ public class TestIniciarSesion {
 	public static void iniciarSesion(boolean esDocente) throws IOException, InterruptedException {
 		//String filePathDatosUsuario = "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/datosEvelia.xlsx";
 		String filePathDatosUsuario = "/home/agustin/Escritorio/Repositorios/Beca-VES./datosEvelia.xlsx";
+		// Cambiar a ods ?????
 		String usuario;
 		String contraseña;
 		if(esDocente) {
@@ -45,21 +59,28 @@ public class TestIniciarSesion {
 			
 		}
 		else {
-			usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 5);
-			contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 1);
+			//usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 5);
+			//contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 1);
+			
+			usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 8);
+			contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 8);
 		}
-		driver.findElement(usuarioLocator).sendKeys(usuario);
-		driver.findElement(contraseñaLocator).sendKeys(contraseña);
-		driver.findElement(iniciarSesionLocator).click();
+		//driver.findElement(usuarioLocator).sendKeys(usuario);
+		//driver.findElement(contraseñaLocator).sendKeys(contraseña);
+		//driver.findElement(iniciarSesionLocator).click();
+		driver.findElement(usuario2).sendKeys(usuario);
+		driver.findElement(contraseña2).sendKeys(contraseña);
+		driver.findElement(iniciarSesion).click();
 		
-		Thread.sleep(1000);
-		
+		//Thread.sleep(1000);
+		/*
 		if(driver.findElement(paginaInicialEveliaLocator).isDisplayed()) {
 			System.out.println("Ingreso correcto a Evelia");
 		}
 		else {
 			fail("Error al ingresar a Evelia");
 		}
+		*/
 	}
 	
 	/**
@@ -108,6 +129,16 @@ public class TestIniciarSesion {
 			fail("Error al ingresar al aula de Simulacro De Evaluaciones");
 		}
 	}
+
+	public static void entrarAulaTestingAutomatizadoAlumno() throws IOException, InterruptedException {
+		iniciarSesion(false);
+		
+		//Thread.sleep(1000);
+		driver.findElement(aula).click();
+		//Thread.sleep(1000);
+		driver.findElement(comision).click();
+		
+	}
 	
 	/**
 	 * Metodo que inicia sesion como docente o alumno a evelia.
@@ -153,7 +184,5 @@ public class TestIniciarSesion {
 //			fail("Error al ingresar al aula de Simulacro De Evaluaciones");
 //		}
 //	}
-	
-	
 	
 }
