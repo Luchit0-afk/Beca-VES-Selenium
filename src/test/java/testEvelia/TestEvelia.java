@@ -178,7 +178,11 @@ public class TestEvelia {
 //		TestRendirExamenNumericaCalculada.hacerEvaluacionTestingAutomatizo();
 //		TestRendinExamenCompletarFrase.hacerEvaluacionTestingAutomatizo();
 //		TestRendirExamenAsociacionTerminos.hacerEvaluacionTestingAutomatizo();
-		TestRendirExamenRespuestaAbierta.hacerEvaluacionTestingAutomatizo();
+//		TestRendirExamenRespuestaAbierta.hacerEvaluacionTestingAutomatizo();
+//		RendirExamen.numericoCalculada();
+//		RendirExamen.completarFrase();
+		RendirExamen.asociacionDeTerminos();
+		
 		
 	}
 }
