@@ -42,21 +42,17 @@ public class TestEvelia {
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
-		//System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
+//		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
+		System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
 		//File operaFile = new File("./drivers/operadriver");
-		//testtestTest
-		//testasd
-		//test
-		//testDefinitivoTalvez
 		
 		//System.setProperty("webdriver.opera.driver", "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/drivers/operadriver");
 		//System.setProperty("webdriver.edge.driver", "./drivers/msedgedriver");
 		//System.setProperty("webdriver.opera.driver", "./drivers/operadriver");
 		
 		//WebDriver driver = new SafariDriver();
-		driver = new ChromeDriver();
-		//driver = new FirefoxDriver();
+//		driver = new ChromeDriver();
+		driver = new FirefoxDriver();
 		//driver = new OperaDriver();
 		//driver = new EdgeDriver();
 		driver.manage().window().maximize();
@@ -178,7 +174,10 @@ public class TestEvelia {
 	public void rendirExamen() throws IOException, InterruptedException {
 		//RendirExamen.opcionMultiple(4, new int[] {1, 2, 1, 2});
 		//RendirExamen.verdaderoFalso(4, new boolean[] {true, false, true, false});
-		RendirExamen.formatoTabla(3, 3, new int[][] {{1, 2, 3}, {1, 3, 2}, {3, 1, 2}});
+//		RendirExamen.formatoTabla(3, 3, new int[][] {{1, 2, 3}, {1, 3, 2}, {3, 1, 2}});
+//		TestRendirExamenNumericaCalculada.hacerEvaluacionTestingAutomatizo();
+//		TestRendinExamenCompletarFrase.hacerEvaluacionTestingAutomatizo();
+		TestRendirExamenAsociacionTerminos.hacerEvaluacionTestingAutomatizo();
 	}
 }
 

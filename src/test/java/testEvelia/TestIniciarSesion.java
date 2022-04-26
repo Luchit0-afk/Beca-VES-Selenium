@@ -49,21 +49,30 @@ public class TestIniciarSesion {
 	 */
 	public static void iniciarSesion(boolean esDocente) throws IOException, InterruptedException {
 		//String filePathDatosUsuario = "/home/luchit0afk/eclipse-workspace/QuealityStreamTutorial/datosEvelia.xlsx";
-		String filePathDatosUsuario = "/home/agustin/Escritorio/Repositorios/Beca-VES./datosEvelia.xlsx";
+//		String filePathDatosUsuario = "/home/agustin/Escritorio/Repositorios/Beca-VES./datosEvelia.xlsx";
 		// Cambiar a ods ?????
 		String usuario;
 		String contraseña;
+//		if(esDocente) {
+//			usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 1);
+//			contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 1);
+//			
+//		}
+//		else {
+//			//usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 5);
+//			//contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 1);
+//			
+//			usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 8);
+//			contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 8);
+//		}
 		if(esDocente) {
-			usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 1);
-			contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 1);
+			usuario = "1110100";
+			contraseña = "10100";
 			
 		}
-		else {
-			//usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 5);
-			//contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 1);
-			
-			usuario = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 1, 8);
-			contraseña = readExcelFile.getCellValue(filePathDatosUsuario, "Hoja1", 2, 8);
+		else {			
+			usuario = "1110011";
+			contraseña = "10011";
 		}
 		//driver.findElement(usuarioLocator).sendKeys(usuario);
 		//driver.findElement(contraseñaLocator).sendKeys(contraseña);
