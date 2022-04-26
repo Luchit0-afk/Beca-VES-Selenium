@@ -177,7 +177,9 @@ public class TestEvelia {
 //		RendirExamen.formatoTabla(3, 3, new int[][] {{1, 2, 3}, {1, 3, 2}, {3, 1, 2}});
 //		TestRendirExamenNumericaCalculada.hacerEvaluacionTestingAutomatizo();
 //		TestRendinExamenCompletarFrase.hacerEvaluacionTestingAutomatizo();
-		TestRendirExamenAsociacionTerminos.hacerEvaluacionTestingAutomatizo();
+//		TestRendirExamenAsociacionTerminos.hacerEvaluacionTestingAutomatizo();
+		TestRendirExamenRespuestaAbierta.hacerEvaluacionTestingAutomatizo();
+		
 	}
 }
 
