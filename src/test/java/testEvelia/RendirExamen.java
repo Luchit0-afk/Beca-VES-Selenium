@@ -32,11 +32,7 @@ public class RendirExamen {
 	private static By escribir = By.xpath("//*[@id=\"rtaNC1\"]");
 	// APRENDER A ESCRIBIR O PASAR CADENAS POR EXCEL
 	*/
-	private static By inputNumericoCalculadaRespuestaLocator = By.xpath("//*[@id=\"rtaNC1\"]");
-	private static By primerSelectCompletarFraseLocator = By.xpath("//*[@id=\"rtaCF11\"]");
-	private static By segundoSelectCompletarFraseLocator = By.xpath("//*[@id=\"rtaCF12\"]");
-	private static By primerSelectAsociacionTerminosLocator = By.xpath("//*[@id=\"rtaAT11\"]");
-	private static By segundoSelectAsociacionTerminosLocator = By.xpath("//*[@id=\"rtaAT12\"]");
+	
 												
 	private static void ingresoExamen() throws IOException, InterruptedException {
 		//TestIniciarSesion.entrarAulaSimulacroEvaluaciones(false);
@@ -123,7 +119,7 @@ public class RendirExamen {
 		
 		ingresoExamenConParametro(5);
 		
-		driver.findElement(inputNumericoCalculadaRespuestaLocator).sendKeys("1");
+		driver.findElement(Paths.inputNumericoCalculadaRespuestaLocator).sendKeys("1");
 		
 		Thread.sleep(2000);
 		System.out.print("Respondida la evaluacion de manera correcta");
@@ -134,8 +130,8 @@ public class RendirExamen {
 		
 		ingresoExamenConParametro(4);
 		
-		WebElement WebElementPrimerSelect = driver.findElement(primerSelectCompletarFraseLocator);
-		WebElement WebElementSegundoSelect = driver.findElement(segundoSelectCompletarFraseLocator);
+		WebElement WebElementPrimerSelect = driver.findElement(Paths.primerSelectCompletarFraseLocator);
+		WebElement WebElementSegundoSelect = driver.findElement(Paths.segundoSelectCompletarFraseLocator);
 		
 		Select primerSelect = new Select(WebElementPrimerSelect);
 		Select segundoSelect = new Select(WebElementSegundoSelect);
@@ -155,8 +151,8 @@ public class RendirExamen {
 		
 		ingresoExamenConParametro(3);
 		
-		WebElement WebElementPrimerSelect = driver.findElement(primerSelectAsociacionTerminosLocator);
-		WebElement WebElementSegundoSelect = driver.findElement(segundoSelectAsociacionTerminosLocator);
+		WebElement WebElementPrimerSelect = driver.findElement(Paths.primerSelectAsociacionTerminosLocator);
+		WebElement WebElementSegundoSelect = driver.findElement(Paths.segundoSelectAsociacionTerminosLocator);
 		
 		Select primerSelect = new Select(WebElementPrimerSelect);
 		Select segundoSelect = new Select(WebElementSegundoSelect);
