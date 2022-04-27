@@ -6,6 +6,8 @@ import java.io.IOException;
 import static testEvelia.TestEvelia.*;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import testEvelia.Paths.*;
 
@@ -31,6 +33,7 @@ public class RendirExamen {
 	// APRENDER A ESCRIBIR O PASAR CADENAS POR EXCEL
 	*/
 	
+												
 	private static void ingresoExamen() throws IOException, InterruptedException {
 		//TestIniciarSesion.entrarAulaSimulacroEvaluaciones(false);
 		TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
@@ -40,6 +43,15 @@ public class RendirExamen {
 		//driver.findElement(Paths.rendirExamen2).click();
 		//driver.findElement(Paths.rendirExamen3).click();
 		driver.findElement(Paths.rendirExamen(3)).click();
+	}
+	
+	private static void ingresoExamenConParametro(int position) throws IOException, InterruptedException {
+		//TestIniciarSesion.entrarAulaSimulacroEvaluaciones(false);
+		TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
+		
+		driver.findElement(Paths.evaluaciones).click();
+		driver.findElement(Paths.rendirExamen(position)).click();
+		//driver.findElement(Paths.rendirExamen2).click();
 	}
 	
 	// OPCION MULTIPLE CON DOS RESPUESTAS
@@ -102,6 +114,59 @@ public class RendirExamen {
 			driver.findElement(Paths.siguiente).click();
 		}
 		driver.findElement(Paths.entregar).click();
+		
+	}
+	
+	public static void numericoCalculada() throws IOException, InterruptedException {
+		
+		ingresoExamenConParametro(5);
+		
+		driver.findElement(Paths.inputNumericoCalculadaRespuestaLocator).sendKeys("1");
+		
+		Thread.sleep(2000);
+		System.out.print("Respondida la evaluacion de manera correcta");
+		
+	}
+	
+	public static void completarFrase() throws IOException, InterruptedException {
+		
+		ingresoExamenConParametro(4);
+		
+		WebElement WebElementPrimerSelect = driver.findElement(Paths.primerSelectCompletarFraseLocator);
+		WebElement WebElementSegundoSelect = driver.findElement(Paths.segundoSelectCompletarFraseLocator);
+		
+		Select primerSelect = new Select(WebElementPrimerSelect);
+		Select segundoSelect = new Select(WebElementSegundoSelect);
+		
+		
+//		primerSelect.selectByVisibleText("Correcta");
+//		segundoSelect.selectByVisibleText("Incorrecta");
+		primerSelect.selectByIndex(1);
+		segundoSelect.selectByIndex(2);
+		
+		Thread.sleep(2000);
+		System.out.print("Respondida la evaluacion de manera correcta");
+		
+	}
+	
+	public static void asociacionDeTerminos() throws IOException, InterruptedException {
+		
+		ingresoExamenConParametro(3);
+		
+		WebElement WebElementPrimerSelect = driver.findElement(Paths.primerSelectAsociacionTerminosLocator);
+		WebElement WebElementSegundoSelect = driver.findElement(Paths.segundoSelectAsociacionTerminosLocator);
+		
+		Select primerSelect = new Select(WebElementPrimerSelect);
+		Select segundoSelect = new Select(WebElementSegundoSelect);
+		
+		
+		primerSelect.selectByVisibleText("Correcto");
+		segundoSelect.selectByVisibleText("Incorrecto");
+//		primerSelect.selectByIndex(1);
+//		segundoSelect.selectByIndex(2);
+		
+		Thread.sleep(2000);
+		System.out.print("Respondida la evaluacion de manera correcta");
 		
 	}
 

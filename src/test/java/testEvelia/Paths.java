@@ -23,6 +23,13 @@ public class Paths {
 		public static By verdadero = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/div[1]/label"); 
 		public static By falso = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/div[2]/label"); 	
 		
+		public static By inputNumericoCalculadaRespuestaLocator = By.xpath("//*[@id=\"rtaNC1\"]");
+		
+		public static By primerSelectCompletarFraseLocator = By.xpath("//*[@id=\"rtaCF11\"]");
+		public static By segundoSelectCompletarFraseLocator = By.xpath("//*[@id=\"rtaCF12\"]");
+		
+		public static By primerSelectAsociacionTerminosLocator = By.xpath("//*[@id=\"rtaAT11\"]");
+		public static By segundoSelectAsociacionTerminosLocator = By.xpath("//*[@id=\"rtaAT12\"]");
 		// Generalizar la construcciones de los x path
 		/*
 		public static By pregUnoOpUno = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[1]/td[2]/center/label");

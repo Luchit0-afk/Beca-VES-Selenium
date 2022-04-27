@@ -16,18 +16,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class TestRendinExamenCompletarFrase {
+public class TestRendirExamenRespuestaAbierta {
 	
 	//Localizadores para las evaluaciones
 	private static By evaluacionesLocator = By.xpath("//*[@id=\"listado\"]/div[9]/a");
 	private static By dentroDeEvalLocator = By.xpath("//*[@id=\"contenido\"]/h1");
 	private static By nombreEvaluacionLocator = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[1]/td[1]");
 	
-	private static By botonParaRendirEvaluacionLocator = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[4]/td[4]/center/button");
+	private static By botonParaRendirEvaluacionLocator = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[6]/td[4]/center/button");
 	private static By dentroDeRendirLocator = By.xpath("//*[@id=\"contenido\"]/h1");
 	
-	private static By primerSelectLocator = By.xpath("//*[@id=\"rtaCF11\"]");
-	private static By segundoSelectLocator = By.xpath("//*[@id=\"rtaCF12\"]");
+	private static By inputRespuestaLocator = By.xpath("//*[@id=\"guardarEx\"]");
 	
 	private static By opcionCorrectaMultipleChoiceLocator = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div[1]/div/div[1]/label");
 	private static By botonSiguientePreguntaLocator = By.xpath("//*[@id=\"pregunta\"]/div[3]/div[2]/center/button");
@@ -62,24 +61,13 @@ public class TestRendinExamenCompletarFrase {
 		TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
 		
 		driver.findElement(evaluacionesLocator).click();
-		System.out.println("test4");
 		
 		if ( driver.findElement(dentroDeEvalLocator).isDisplayed() ) {
 			if ( driver.findElement(nombreEvaluacionLocator).isDisplayed() ) {
 				driver.findElement(botonParaRendirEvaluacionLocator).click();
 				if ( driver.findElement(dentroDeRendirLocator).isDisplayed() ) {
 					
-					WebElement WebElementPrimerSelect = driver.findElement(primerSelectLocator);
-					WebElement WebElementSegundoSelect = driver.findElement(segundoSelectLocator);
-					
-					Select primerSelect = new Select(WebElementPrimerSelect);
-					Select segundoSelect = new Select(WebElementSegundoSelect);
-					
-					
-//					primerSelect.selectByVisibleText("Correcta");
-//					segundoSelect.selectByVisibleText("Incorrecta");
-					primerSelect.selectByIndex(1);
-					segundoSelect.selectByIndex(2);
+					driver.findElement(inputRespuestaLocator).sendKeys("1");
 					
 					Thread.sleep(2000);
 					System.out.print("Respondida la evaluacion de manera correcta");

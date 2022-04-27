@@ -19,11 +19,12 @@ import org.openqa.selenium.support.ui.Select;
 public class TestRendirExamenNumericaCalculada {
 	
 	//Localizadores para las evaluaciones
+	
 	private static By evaluacionesLocator = By.xpath("//*[@id=\"listado\"]/div[9]/a");
 	private static By dentroDeEvalLocator = By.xpath("//*[@id=\"contenido\"]/h1");
 	private static By nombreEvaluacionLocator = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[1]/td[1]");
 	
-	private static By botonParaRendirEvaluacionLocator = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[2]/td[4]/center/button");
+	private static By botonParaRendirEvaluacionLocator = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[5]/td[4]/center/button");
 	private static By dentroDeRendirLocator = By.xpath("//*[@id=\"contenido\"]/h1");
 	
 	private static By inputRespuestaLocator = By.xpath("//*[@id=\"rtaNC1\"]");
@@ -58,10 +59,9 @@ public class TestRendirExamenNumericaCalculada {
 	 * Usa el metodo <i>TestIniciarSesion.entrarAulaSimulacroEvaluaciones(true)</i> para iniciar sesion como docente.
 	 */
 	public static void hacerEvaluacionTestingAutomatizo() throws IOException, InterruptedException {
-		TestIniciarSesion.entrarAulaTestingAutomatizado();
+		TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
 		
 		driver.findElement(evaluacionesLocator).click();
-		System.out.println("test4");
 		
 		if ( driver.findElement(dentroDeEvalLocator).isDisplayed() ) {
 			if ( driver.findElement(nombreEvaluacionLocator).isDisplayed() ) {
