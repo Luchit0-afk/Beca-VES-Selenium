@@ -9,6 +9,7 @@ public class Paths {
 		// LAS DE ABAJO SON IGUALES
 		public static By rendirExamen = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr/td[4]/center/button");
 		public static By rendirExamen2 = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[2]/td[4]/center/button");
+		public static By rendirExamen3 = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[3]/td[4]/center/button");
 		
 		public static By siguiente = By.xpath("//*[@id=\"pregunta\"]/div[3]/div[2]/center/button");
 		public static By entregar = By.xpath("//*[@id=\"FinalizExamen\"]");

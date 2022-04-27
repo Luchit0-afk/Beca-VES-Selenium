@@ -36,8 +36,10 @@ public class RendirExamen {
 		TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
 		
 		driver.findElement(Paths.evaluaciones).click();
-		driver.findElement(Paths.rendirExamen).click();
+		//driver.findElement(Paths.rendirExamen).click();
 		//driver.findElement(Paths.rendirExamen2).click();
+		//driver.findElement(Paths.rendirExamen3).click();
+		driver.findElement(Paths.rendirExamen(3)).click();
 	}
 	
 	// OPCION MULTIPLE CON DOS RESPUESTAS
