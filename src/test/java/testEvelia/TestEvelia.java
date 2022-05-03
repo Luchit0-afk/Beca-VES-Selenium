@@ -170,7 +170,7 @@ public class TestEvelia {
 		
 	}
 	
-	@Test
+	//@Test
 	public void rendirExamen() throws IOException, InterruptedException {
 		//RendirExamen.opcionMultiple(4, new int[] {1, 2, 1, 2});
 		//RendirExamen.verdaderoFalso(4, new boolean[] {true, false, true, false});
@@ -180,10 +180,13 @@ public class TestEvelia {
 //		TestRendirExamenAsociacionTerminos.hacerEvaluacionTestingAutomatizo();
 //		TestRendirExamenRespuestaAbierta.hacerEvaluacionTestingAutomatizo();
 //		RendirExamen.numericoCalculada();
-//		RendirExamen.completarFrase();
-		RendirExamen.asociacionDeTerminos();
-		
-		
+		RendirExamen.completarFrase();
+//		RendirExamen.asociacionDeTerminos();
+	}
+	
+	@Test
+	public void crearExamen() throws IOException, InterruptedException {
+		CrearExamen.crearExamen("Test123");
 	}
 }
 
