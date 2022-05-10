@@ -11,6 +11,9 @@ import static testEvelia.TestEvelia.*;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class TestIniciarSesion {
@@ -28,7 +31,7 @@ public class TestIniciarSesion {
 	private static By contraseñaLocator = By.xpath("//*[@id=\"clave\"]");
 	private static By iniciarSesionLocator = By.xpath("//*[@id=\"Ingresar\"]/b");
 	private static By paginaInicialEveliaLocator = By.xpath("//*[@id=\"contenido\"]/div[4]/h4");
-	
+
 	//BOTONES DEL SERVIDOR NUEVOS
 	// REVISAR !!! SON IGUALES
 	private static By usuario2 = By.xpath("//*[@id=\"login\"]");
@@ -38,6 +41,8 @@ public class TestIniciarSesion {
 	
 	//private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[4]/a/b");
 	private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[4]/a/b");
+
+	private static By aulaDocente = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[3]/a");
 	
 	// Comision: testing automatizado
 	private static By comision = By.xpath("//*[@id=\"contenido\"]/b[5]/a");
@@ -81,8 +86,11 @@ public class TestIniciarSesion {
 		driver.findElement(usuario2).sendKeys(usuario);
 		driver.findElement(contraseña2).sendKeys(contraseña);
 		Thread.sleep(1000);
+
 		driver.findElement(iniciarSesion).click();
 		
+		//new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(iniciarSesion)).click();
+//		driver.findElement(iniciarSesion).click();
 		//Thread.sleep(1000);
 		/*
 		if(driver.findElement(paginaInicialEveliaLocator).isDisplayed()) {
@@ -151,6 +159,16 @@ public class TestIniciarSesion {
 		
 	}
 	
+	public static void entrarAulaTestingAutomatizadoDocente() throws IOException, InterruptedException {
+		iniciarSesion(true);
+		
+		//Thread.sleep(1000);
+		driver.findElement(aulaDocente).click();
+		//Thread.sleep(1000);
+		driver.findElement(comision).click();
+		
+	}
+	
 	/**
 	 * Metodo que inicia sesion como docente o alumno a evelia.
 	 * @param esDocente true para entrar como docente, false para entrar como alumno.
@@ -195,5 +213,10 @@ public class TestIniciarSesion {
 //			fail("Error al ingresar al aula de Simulacro De Evaluaciones");
 //		}
 //	}
+	
+	private static WebElement waitForElement(By locator, int timeout){
+	    WebElement element=new WebDriverWait(driver,timeout).until(ExpectedConditions.presenceOfElementLocated(locator));
+	    return element;
+	}
 	
 }
