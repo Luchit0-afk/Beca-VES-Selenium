@@ -34,7 +34,7 @@ public class RendirExamen {
 	*/
 	
 												
-	private static void ingresoExamen() throws IOException, InterruptedException {
+	protected static void ingresoExamen() throws IOException, InterruptedException {
 		//TestIniciarSesion.entrarAulaSimulacroEvaluaciones(false);
 		TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
 		
@@ -45,7 +45,7 @@ public class RendirExamen {
 		driver.findElement(Paths.rendirExamen(3)).click();
 	}
 	
-	private static void ingresoExamenConParametro(int position) throws IOException, InterruptedException {
+	protected static void ingresoExamenConParametro(int position) throws IOException, InterruptedException {
 		//TestIniciarSesion.entrarAulaSimulacroEvaluaciones(false);
 		TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
 		
@@ -55,6 +55,7 @@ public class RendirExamen {
 	}
 	
 	// OPCION MULTIPLE CON DOS RESPUESTAS
+	/*
 	public static void opcionMultiple(int cantidadPreguntas, int[] respuestas) throws IOException, InterruptedException {
 		
 		ingresoExamen();
@@ -77,7 +78,22 @@ public class RendirExamen {
 		
 		System.out.println("Evaluacion rendida exitosamente");
 	}
+	*/
+	public static void opcionMultiple(int opciones, int respuesta) {
+		if (opciones < 1) {
+			throw new IllegalArgumentException("Cantidad de opcines invalida");
+		}
+		if (respuesta < 1 || respuesta > opciones) {
+			throw new IllegalArgumentException("Respuesta invalida");
+		} 
+		if (respuesta == 1) {
+			driver.findElement(Paths.opcionUno).click();
+		} else {
+			driver.findElement(Paths.opcionDos).click();
+		}
+	}
 	
+	/*
 	public static void verdaderoFalso(int cantidadPreguntas, boolean[] respuestas) throws IOException, InterruptedException {
 		
 		ingresoExamen();
@@ -93,7 +109,19 @@ public class RendirExamen {
 
 		driver.findElement(Paths.entregar).click();
 	}
+	*/
+	public static void verdaderoFalso(boolean respuesta) {
+		if (respuesta) {
+			driver.findElement(Paths.verdadero).click();
+		} else {
+			driver.findElement(Paths.falso).click();
+		}
+	}
 	
+	public static void siguiente() {
+		driver.findElement(Paths.siguiente).click();
+	}
+	/*
 	public static void formatoTabla(int cantidadPreguntas, int cantidadOpciones, int[][] respuestas) throws IOException, InterruptedException {
 		
 		ingresoExamen();
@@ -113,10 +141,23 @@ public class RendirExamen {
 			}
 			driver.findElement(Paths.siguiente).click();
 		}
-		driver.findElement(Paths.entregar).click();
-		
+		driver.findElement(Paths.entregar).click();	
 	}
-	
+	*/
+	public static void formatoTabla(int[] respuestas) {
+		for (int i = 0; i < respuestas.length; i++) {
+			if (respuestas[i] == 1) {
+				driver.findElement(Paths.preguntaXOpcionY(i+1,1+1)).click();
+			} else {
+				if (respuestas[i] == 2) {
+					driver.findElement(Paths.preguntaXOpcionY(i+1,2+1)).click();
+				} else {
+					driver.findElement(Paths.preguntaXOpcionY(i+1,3+1)).click();
+				}
+			}
+		}
+	}
+	/*
 	public static void numericoCalculada() throws IOException, InterruptedException {
 		
 		ingresoExamenConParametro(5);
@@ -127,7 +168,11 @@ public class RendirExamen {
 		System.out.print("Respondida la evaluacion de manera correcta");
 		
 	}
-	
+	*/
+	public static void numericaCalculada(double respuesta) {
+		driver.findElement(Paths.inputNumericoCalculadaRespuestaLocator).sendKeys(String.valueOf(respuesta));
+	}
+	/*
 	public static void completarFrase() throws IOException, InterruptedException {
 		
 		ingresoExamenConParametro(4);
@@ -146,9 +191,20 @@ public class RendirExamen {
 		
 		Thread.sleep(2000);
 		System.out.print("Respondida la evaluacion de manera correcta");
+	}
+	*/
+	public static void completarFrase() {
+		WebElement WebElementPrimerSelect = driver.findElement(Paths.primerSelectCompletarFraseLocator);
+		WebElement WebElementSegundoSelect = driver.findElement(Paths.segundoSelectCompletarFraseLocator);
 		
+		Select primerSelect = new Select(WebElementPrimerSelect);
+		Select segundoSelect = new Select(WebElementSegundoSelect);
+		
+		primerSelect.selectByIndex(1);
+		segundoSelect.selectByIndex(2);
 	}
 	
+	/*
 	public static void asociacionDeTerminos() throws IOException, InterruptedException {
 		
 		ingresoExamenConParametro(3);
@@ -166,8 +222,18 @@ public class RendirExamen {
 //		segundoSelect.selectByIndex(2);
 		
 		Thread.sleep(2000);
-		System.out.print("Respondida la evaluacion de manera correcta");
+		System.out.print("Respondida la evaluacion de manera correcta");	
+	}
+	*/
+	public static void asociacionDeTerminos() {
+		WebElement WebElementPrimerSelect = driver.findElement(Paths.primerSelectAsociacionTerminosLocator);
+		WebElement WebElementSegundoSelect = driver.findElement(Paths.segundoSelectAsociacionTerminosLocator);
 		
+		Select primerSelect = new Select(WebElementPrimerSelect);
+		Select segundoSelect = new Select(WebElementSegundoSelect);
+		
+		primerSelect.selectByVisibleText("Correcto");
+		segundoSelect.selectByVisibleText("Incorrecto");
 	}
 
 }

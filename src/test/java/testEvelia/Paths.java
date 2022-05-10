@@ -43,6 +43,8 @@ public class Paths {
 		public static By pregTresOpTres = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[3]/td[4]/center/label");
 		*/
 		
+		public static By rendirExamenMayo = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[1]/td[4]/center/button");
+		
 		
 		// REVISAR BIEN
 		public static By rendirExamen(int posicion) {

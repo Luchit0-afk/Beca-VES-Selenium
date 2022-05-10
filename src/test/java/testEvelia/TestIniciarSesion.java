@@ -36,7 +36,8 @@ public class TestIniciarSesion {
 	private static By iniciarSesion = By.xpath("//*[@id=\"Ingresar\"]");
 	// Aula: testing automatizado
 	
-	private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[4]/a/b");
+	//private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[4]/a/b");
+	private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[4]/a/b");
 	
 	// Comision: testing automatizado
 	private static By comision = By.xpath("//*[@id=\"contenido\"]/b[5]/a");
@@ -71,14 +72,15 @@ public class TestIniciarSesion {
 			
 		}
 		else {			
-			usuario = "1110011";
-			contraseña = "10011";
+			usuario = "1110013";
+			contraseña = "10013";
 		}
 		//driver.findElement(usuarioLocator).sendKeys(usuario);
 		//driver.findElement(contraseñaLocator).sendKeys(contraseña);
 		//driver.findElement(iniciarSesionLocator).click();
 		driver.findElement(usuario2).sendKeys(usuario);
 		driver.findElement(contraseña2).sendKeys(contraseña);
+		Thread.sleep(1000);
 		driver.findElement(iniciarSesion).click();
 		
 		//Thread.sleep(1000);
@@ -145,7 +147,7 @@ public class TestIniciarSesion {
 		//Thread.sleep(1000);
 		driver.findElement(aula).click();
 		//Thread.sleep(1000);
-		driver.findElement(comision).click();
+		//driver.findElement(comision).click();
 		
 	}
 	
