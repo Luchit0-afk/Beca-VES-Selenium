@@ -30,18 +30,6 @@ public class Paths {
 		
 		public static By primerSelectAsociacionTerminosLocator = By.xpath("//*[@id=\"rtaAT11\"]");
 		public static By segundoSelectAsociacionTerminosLocator = By.xpath("//*[@id=\"rtaAT12\"]");
-		// Generalizar la construcciones de los x path
-		/*
-		public static By pregUnoOpUno = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[1]/td[2]/center/label");
-		public static By pregUnoOpDos = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[1]/td[3]/center/label");
-		public static By pregUnoOpTres = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[1]/td[4]/center/label");
-		public static By pregDosOpUno = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[2]/td[2]/center/label");
-		public static By pregDosOpDos = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[2]/td[3]/center/label");
-		public static By pregDosOpTres = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[2]/td[4]/center/label");
-		public static By pregTresOpUno = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[3]/td[2]/center/label");
-		public static By pregTresOpDos = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[3]/td[3]/center/label");
-		public static By pregTresOpTres = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[3]/td[4]/center/label");
-		*/
 		
 		public static By rendirExamenMayo = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[1]/td[4]/center/button");
 		
@@ -54,4 +42,33 @@ public class Paths {
 		public static By preguntaXOpcionY(int x, int y) {
 			return By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[" + x + "]/td[" + y + "]/center/label");
 		}
+		
+		//Localizadores de las aulas donde podemos entrar
+		public static By simulacroEvaluacionesDocenteLocator = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[1]/a/b");
+		public static By testIRCDocenteLocator = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[2]/a/b");
+		public static By simulacroEvaluacionesAlumnoLocator = By.xpath("//*[@id=\"contenido\"]/ul[4]/li[1]/a/b");
+		public static By testIRCAlumnoLocator = By.xpath("//*[@id=\"contenido\"]/ul[4]/li[2]/a/b");
+		
+		//Localizador para verificar el correcto ingreso a un aula(cualquiera) en evelia
+		public static By dentroDeAulaVirtualLocator = By.xpath("//*[@id=\"contenido\"]/h1");
+		
+		public static By usuarioLocator = By.xpath("//*[@id=\"login\"]");
+		public static By contraseñaLocator = By.xpath("//*[@id=\"clave\"]");
+		public static By iniciarSesionLocator = By.xpath("//*[@id=\"Ingresar\"]/b");
+		public static By paginaInicialEveliaLocator = By.xpath("//*[@id=\"contenido\"]/div[4]/h4");
+
+		//BOTONES DEL SERVIDOR NUEVOS
+		// REVISAR !!! SON IGUALES
+		public static By usuario2 = By.xpath("//*[@id=\"login\"]");
+		public static By contraseña2 = By.xpath("//*[@id=\"clave\"]");
+		public static By iniciarSesion = By.xpath("//*[@id=\"Ingresar\"]");
+		// Aula: testing automatizado
+		
+		//private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[4]/a/b");
+		public static By aula = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[4]/a/b");
+
+		public static By aulaDocente = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[3]/a");
+		
+		// Comision: testing automatizado
+		public static By comision = By.xpath("//*[@id=\"contenido\"]/b[5]/a");
 }

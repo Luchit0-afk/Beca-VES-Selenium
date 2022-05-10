@@ -19,7 +19,7 @@ public class RendirExamenCompleto extends RendirExamen{
 	
 	public static EVAL_TYPE questionType() {
 		EVAL_TYPE et = null;
-		if (driver.findElement(Paths.verdadero).isEnabled()) {
+		if (driver.findElement(Paths.verdadero).isDisplayed()) {
 			et = EVAL_TYPE.VERD_FALSO;
 		}
 		if (driver.findElement(Paths.opcionUno).isDisplayed()) {
@@ -44,10 +44,10 @@ public class RendirExamenCompleto extends RendirExamen{
 	}
 	
 	public static void rendir(int cantPreguntas) throws IOException, InterruptedException {
-		ingresoExamenConParametro(1);
+		ingresoExamen(1);
 		for (int i = 0; i < cantPreguntas; i++) {
 			EVAL_TYPE et = null;
-			//et = questionType();
+			et = questionType();
 			if (et == EVAL_TYPE.VERD_FALSO) {
 				verdaderoFalso(true);
 				System.out.println("1 BIEN");
@@ -72,6 +72,38 @@ public class RendirExamenCompleto extends RendirExamen{
 				asociacionDeTerminos();
 				System.out.println("6 BIEN");
 			}
+		}
+	}
+	
+	public static void rendir2(int cantPreguntas) throws IOException, InterruptedException {
+		ingresoExamen(1);
+		for (int i = 0; i < cantPreguntas; i++) {
+			if (i == 0) {
+				opcionMultiple(3, 2);
+				System.out.println("1 BIEN");
+			}
+			if (i == 1) {
+				verdaderoFalso(false);
+				//siguiente();
+				System.out.println("2 BIEN");
+			}
+			if (i == 2) {
+				numericaCalculada(5.0);
+				System.out.println("3 BIEN");
+			}
+			if (i == 3) {
+				completarFrase();
+				System.out.println("4 BIEN");
+			}
+			if (i == 4) {
+				asociacionDeTerminos();
+				System.out.println("5 BIEN");
+			}
+			if (i == 5) {
+				formatoTabla(new int[] {1,2,3});
+				System.out.println("6 BIEN");
+			}
+			Thread.sleep(500);
 		}
 	}
 

@@ -15,37 +15,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import testEvelia.Paths.*;
+
 
 public class TestIniciarSesion {
-	
-	//Localizadores de las aulas donde podemos entrar
-	private static By simulacroEvaluacionesDocenteLocator = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[1]/a/b");
-	private static By testIRCDocenteLocator = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[2]/a/b");
-	private static By simulacroEvaluacionesAlumnoLocator = By.xpath("//*[@id=\"contenido\"]/ul[4]/li[1]/a/b");
-	private static By testIRCAlumnoLocator = By.xpath("//*[@id=\"contenido\"]/ul[4]/li[2]/a/b");
-	
-	//Localizador para verificar el correcto ingreso a un aula(cualquiera) en evelia
-	private static By dentroDeAulaVirtualLocator = By.xpath("//*[@id=\"contenido\"]/h1");
-	
-	private static By usuarioLocator = By.xpath("//*[@id=\"login\"]");
-	private static By contraseñaLocator = By.xpath("//*[@id=\"clave\"]");
-	private static By iniciarSesionLocator = By.xpath("//*[@id=\"Ingresar\"]/b");
-	private static By paginaInicialEveliaLocator = By.xpath("//*[@id=\"contenido\"]/div[4]/h4");
-
-	//BOTONES DEL SERVIDOR NUEVOS
-	// REVISAR !!! SON IGUALES
-	private static By usuario2 = By.xpath("//*[@id=\"login\"]");
-	private static By contraseña2 = By.xpath("//*[@id=\"clave\"]");
-	private static By iniciarSesion = By.xpath("//*[@id=\"Ingresar\"]");
-	// Aula: testing automatizado
-	
-	//private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[4]/a/b");
-	private static By aula = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[4]/a/b");
-
-	private static By aulaDocente = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[3]/a");
-	
-	// Comision: testing automatizado
-	private static By comision = By.xpath("//*[@id=\"contenido\"]/b[5]/a");
 	
 	
 	/**
@@ -83,11 +56,11 @@ public class TestIniciarSesion {
 		//driver.findElement(usuarioLocator).sendKeys(usuario);
 		//driver.findElement(contraseñaLocator).sendKeys(contraseña);
 		//driver.findElement(iniciarSesionLocator).click();
-		driver.findElement(usuario2).sendKeys(usuario);
-		driver.findElement(contraseña2).sendKeys(contraseña);
+		driver.findElement(Paths.usuario2).sendKeys(usuario);
+		driver.findElement(Paths.contraseña2).sendKeys(contraseña);
 		Thread.sleep(1000);
 
-		driver.findElement(iniciarSesion).click();
+		driver.findElement(Paths.iniciarSesion).click();
 		
 		//new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(iniciarSesion)).click();
 //		driver.findElement(iniciarSesion).click();
@@ -111,14 +84,14 @@ public class TestIniciarSesion {
 		iniciarSesion(esDocente);
 		
 		if(esDocente) {
-			driver.findElement(simulacroEvaluacionesDocenteLocator).click();
+			driver.findElement(Paths.simulacroEvaluacionesDocenteLocator).click();
 		}
 		else {
-			driver.findElement(simulacroEvaluacionesAlumnoLocator).click();
+			driver.findElement(Paths.simulacroEvaluacionesAlumnoLocator).click();
 		}
 		Thread.sleep(1000);
 		
-		if(driver.findElement(dentroDeAulaVirtualLocator).isDisplayed()) {
+		if(driver.findElement(Paths.dentroDeAulaVirtualLocator).isDisplayed()) {
 			System.out.println("Ingreso correcto al aula de Simulacro De Evaluaciones");
 		}
 		else {
@@ -134,14 +107,14 @@ public class TestIniciarSesion {
 	public static void entrarAulaTestIRC(boolean esDocente) throws IOException, InterruptedException {
 		iniciarSesion(esDocente);
 		if(esDocente) {
-			driver.findElement(testIRCDocenteLocator).click();
+			driver.findElement(Paths.testIRCDocenteLocator).click();
 		}
 		else {
-			driver.findElement(testIRCAlumnoLocator).click();
+			driver.findElement(Paths.testIRCAlumnoLocator).click();
 		}
 		Thread.sleep(1000);
 		
-		if(driver.findElement(dentroDeAulaVirtualLocator).isDisplayed()) {
+		if(driver.findElement(Paths.dentroDeAulaVirtualLocator).isDisplayed()) {
 			System.out.println("Ingreso correcto al aula de Simulacro De Evaluaciones");
 		}
 		else {
@@ -153,7 +126,7 @@ public class TestIniciarSesion {
 		iniciarSesion(false);
 		
 		//Thread.sleep(1000);
-		driver.findElement(aula).click();
+		driver.findElement(Paths.aula).click();
 		//Thread.sleep(1000);
 		//driver.findElement(comision).click();
 		
@@ -163,9 +136,9 @@ public class TestIniciarSesion {
 		iniciarSesion(true);
 		
 		//Thread.sleep(1000);
-		driver.findElement(aulaDocente).click();
+		driver.findElement(Paths.aulaDocente).click();
 		//Thread.sleep(1000);
-		driver.findElement(comision).click();
+		driver.findElement(Paths.comision).click();
 		
 	}
 	
@@ -176,13 +149,13 @@ public class TestIniciarSesion {
 	 */
 	public static void iniciarSesionConParametros(String usuario, String contrasenia) throws IOException, InterruptedException {
 		
-		driver.findElement(usuarioLocator).sendKeys(usuario);
-		driver.findElement(contraseñaLocator).sendKeys(contrasenia);
-		driver.findElement(iniciarSesionLocator).click();
+		driver.findElement(Paths.usuarioLocator).sendKeys(usuario);
+		driver.findElement(Paths.contraseñaLocator).sendKeys(contrasenia);
+		driver.findElement(Paths.iniciarSesionLocator).click();
 		
 		Thread.sleep(1000);
 		
-		if(driver.findElement(paginaInicialEveliaLocator).isDisplayed()) {
+		if(driver.findElement(Paths.paginaInicialEveliaLocator).isDisplayed()) {
 			System.out.println("Ingreso correcto a Evelia");
 		}
 		else {
