@@ -23,7 +23,7 @@ public class Paths {
 		public static By verdadero = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/div[1]/label"); 
 		public static By falso = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/div[2]/label"); 	
 		
-		public static By inputNumericoCalculadaRespuestaLocator = By.xpath("//*[@id=\"rtaNC1\"]");
+		public static By inputNumericoCalculadaRespuestaLocator = By.xpath("//*[@id=\"rtaNC3\"]");
 		
 		public static By primerSelectCompletarFraseLocator = By.xpath("//*[@id=\"rtaCF11\"]");
 		public static By segundoSelectCompletarFraseLocator = By.xpath("//*[@id=\"rtaCF12\"]");
@@ -32,8 +32,7 @@ public class Paths {
 		public static By segundoSelectAsociacionTerminosLocator = By.xpath("//*[@id=\"rtaAT12\"]");
 		
 		public static By rendirExamenMayo = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[1]/td[4]/center/button");
-		
-		
+
 		// REVISAR BIEN
 		public static By rendirExamen(int posicion) {
 			return By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[" + posicion + "]/td[4]/center/button");
@@ -42,6 +41,13 @@ public class Paths {
 		public static By preguntaXOpcionY(int x, int y) {
 			return By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/table/tbody/tr[" + x + "]/td[" + y + "]/center/label");
 		}
+		
+		public static By iconoPregunta(int numeroPregunta) {
+			System.out.println(numeroPregunta);
+			return By.xpath("//*[@id=\\\"preg_" + numeroPregunta + "\\\"]/i");
+			//*[@id="preg_1"]/i
+		}
+		public static By numeroPreguntaLocator = By.xpath("//*[@id=\"pregunta\"]/center/b");
 		
 		//Localizadores de las aulas donde podemos entrar
 		public static By simulacroEvaluacionesDocenteLocator = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[1]/a/b");
