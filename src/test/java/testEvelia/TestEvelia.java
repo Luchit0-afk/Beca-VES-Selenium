@@ -172,16 +172,6 @@ public class TestEvelia {
 	
 	@Test
 	public void rendirExamen() throws IOException, InterruptedException {
-		//RendirExamen.opcionMultiple(4, new int[] {1, 2, 1, 2});
-		//RendirExamen.verdaderoFalso(4, new boolean[] {true, false, true, false});
-//		RendirExamen.formatoTabla(3, 3, new int[][] {{1, 2, 3}, {1, 3, 2}, {3, 1, 2}});
-		//TestRendirExamenNumericaCalculada.hacerEvaluacionTestingAutomatizo();
-//		TestRendinExamenCompletarFrase.hacerEvaluacionTestingAutomatizo();
-//		TestRendirExamenAsociacionTerminos.hacerEvaluacionTestingAutomatizo();
-//		TestRendirExamenRespuestaAbierta.hacerEvaluacionTestingAutomatizo();
-//		RendirExamen.numericoCalculada();
-//		RendirExamen.completarFrase();
-		//RendirExamen.asociacionDeTerminos();
 		RendirExamenCompleto.rendir2(6);
 	}
 	

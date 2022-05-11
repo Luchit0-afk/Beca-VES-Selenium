@@ -83,8 +83,7 @@ public class RendirExamenCompleto extends RendirExamen{
 				System.out.println("1 BIEN");
 			}
 			if (i == 1) {
-				verdaderoFalso(false);
-				//siguiente();
+				verdaderoFalso(true);
 				System.out.println("2 BIEN");
 			}
 			if (i == 2) {
@@ -103,6 +102,8 @@ public class RendirExamenCompleto extends RendirExamen{
 				formatoTabla(new int[] {1,2,3});
 				System.out.println("6 BIEN");
 			}
+			Thread.sleep(500);
+			siguiente();
 			Thread.sleep(500);
 		}
 	}
