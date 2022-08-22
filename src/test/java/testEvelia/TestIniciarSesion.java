@@ -60,11 +60,30 @@ public class TestIniciarSesion {
 		driver.findElement(Paths.contraseña2).sendKeys(contraseña);
 		Thread.sleep(1000);
 
-		driver.findElement(Paths.iniciarSesion).click();
+		driver.findElement(Paths.iniciarSesionLocator).click();
 		
 		//new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(iniciarSesion)).click();
 //		driver.findElement(iniciarSesion).click();
 		//Thread.sleep(1000);
+		/*
+		if(driver.findElement(paginaInicialEveliaLocator).isDisplayed()) {
+			System.out.println("Ingreso correcto a Evelia");
+		}
+		else {
+			fail("Error al ingresar a Evelia");
+		}
+		*/
+	}
+	
+	// ULTIMA VERSION
+	public static void iniciarSesion(String usuario, String contrasenia) throws IOException, InterruptedException {
+
+		driver.findElement(Paths.usuarioLocator).sendKeys(usuario);
+		driver.findElement(Paths.contraseniaLocator).sendKeys(contrasenia);
+		Thread.sleep(1000);
+
+		driver.findElement(Paths.iniciarSesionLocator).click();
+		
 		/*
 		if(driver.findElement(paginaInicialEveliaLocator).isDisplayed()) {
 			System.out.println("Ingreso correcto a Evelia");
@@ -81,7 +100,8 @@ public class TestIniciarSesion {
 	 * Usa el metodo <i> iniciarSesion(esDocente) </i> para iniciar sesion en evelia.
 	 */
 	public static void entrarAulaSimulacroEvaluaciones(boolean esDocente) throws IOException, InterruptedException {
-		iniciarSesion(esDocente);
+		iniciarSesion("18645043", "siat2019");
+		//iniciarSesion("99999001", "siat2019");
 		
 		if(esDocente) {
 			driver.findElement(Paths.simulacroEvaluacionesDocenteLocator).click();
@@ -150,7 +170,7 @@ public class TestIniciarSesion {
 	public static void iniciarSesionConParametros(String usuario, String contrasenia) throws IOException, InterruptedException {
 		
 		driver.findElement(Paths.usuarioLocator).sendKeys(usuario);
-		driver.findElement(Paths.contraseñaLocator).sendKeys(contrasenia);
+		driver.findElement(Paths.contraseniaLocator).sendKeys(contrasenia);
 		driver.findElement(Paths.iniciarSesionLocator).click();
 		
 		Thread.sleep(1000);

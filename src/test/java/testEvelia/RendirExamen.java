@@ -10,14 +10,15 @@ import static testEvelia.TestEvelia.*;
 public class RendirExamen {
 												
 	protected static void ingresoExamen(int position) throws IOException, InterruptedException {
-		//TestIniciarSesion.entrarAulaSimulacroEvaluaciones(false);
-		TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
+		TestIniciarSesion.entrarAulaSimulacroEvaluaciones(false);
+		//TestIniciarSesion.entrarAulaTestingAutomatizadoAlumno();
 		
 		driver.findElement(Paths.evaluaciones).click();
 		//driver.findElement(Paths.rendirExamen).click();
 		//driver.findElement(Paths.rendirExamen2).click();
 		//driver.findElement(Paths.rendirExamen3).click();
-		driver.findElement(Paths.rendirExamen(position)).click();
+		driver.findElement(Paths.rendirExamen).click();
+		
 	}
 	
 	public static void siguiente() {

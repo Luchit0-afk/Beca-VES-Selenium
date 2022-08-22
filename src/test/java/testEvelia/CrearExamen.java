@@ -33,7 +33,8 @@ public class CrearExamen {
 	
 	
 	private static void ingresoExamen() throws IOException, InterruptedException {
-		TestIniciarSesion.entrarAulaTestingAutomatizadoDocente();
+		//TestIniciarSesion.entrarAulaTestingAutomatizadoDocente();
+		TestIniciarSesion.entrarAulaSimulacroEvaluaciones(true);
 		
 		driver.findElement(evaluacionesBotonLocator).click();
 		driver.findElement(crearExamenBotonLocator).click();

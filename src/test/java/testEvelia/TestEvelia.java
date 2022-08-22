@@ -1,6 +1,7 @@
 package testEvelia;
 
 import org.testng.annotations.AfterMethod;
+import testSuite.*;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
@@ -36,7 +37,7 @@ import tools.ReadExcelFile;
 
 public class TestEvelia {
 	
-	protected static WebDriver driver;
+	public static WebDriver driver;
 	protected static WriteExcelFile writeExcelFile;
 	protected static ReadExcelFile readExcelFile;
 	
@@ -170,7 +171,7 @@ public class TestEvelia {
 		
 	}
 	
-	@Test
+	//@Test
 	public void rendirExamen() throws IOException, InterruptedException {
 		RendirExamenCompleto.rendir2(6);
 	}
@@ -178,6 +179,12 @@ public class TestEvelia {
 	//@Test
 	public void crearExamen() throws IOException, InterruptedException {
 		CrearExamen.crearExamen("Test123");
+	}
+	
+	@Test
+	public void crearExamen2() throws IOException, InterruptedException {
+		//testSuite.CrearExamen.crearExamenCompleto();
+		testSuite.RendirExamen.rendirExamenCompleto();
 	}
 }
 
