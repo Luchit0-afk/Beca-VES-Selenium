@@ -4,6 +4,10 @@ import static testEvelia.TestEvelia.driver;
 
 import java.io.IOException;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 public class RendirExamenCompleto extends RendirExamen{
 	
 	public enum EVAL_TYPE {
@@ -77,7 +81,17 @@ public class RendirExamenCompleto extends RendirExamen{
 	
 	public static void rendir2(int cantPreguntas) throws IOException, InterruptedException {
 		ingresoExamen(1);
+		int numeroPregunta = 0;
 		for (int i = 0; i < cantPreguntas; i++) {
+			numeroPregunta = numeroPregunta + 1;
+			System.out.println(driver.findElement(Paths.numeroPreguntaLocator).getText());
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+//			wait.until(ExpectedConditions.visibilityOfElementLocated(Paths.iconoPregunta(i + 1)));
+			wait.until(ExpectedConditions.textToBePresentInElement(
+					driver.findElement(Paths.numeroPreguntaLocator),
+					"Pregunta: " + numeroPregunta + "/6")
+			);
+			System.out.println(driver.findElement(Paths.numeroPreguntaLocator).getText());
 			if (i == 0) {
 				opcionMultiple(3, 2);
 				System.out.println("1 BIEN");
@@ -102,9 +116,7 @@ public class RendirExamenCompleto extends RendirExamen{
 				formatoTabla(new int[] {1,2,3});
 				System.out.println("6 BIEN");
 			}
-			Thread.sleep(500);
 			siguiente();
-			Thread.sleep(500);
 		}
 	}
 
