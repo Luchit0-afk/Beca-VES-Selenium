@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ../Beca-VES./
+cd ../
 mvn install
