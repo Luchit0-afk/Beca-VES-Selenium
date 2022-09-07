@@ -4,8 +4,15 @@ import static org.junit.Assert.fail;
 import static testEvelia.TestEvelia.driver;
 import testEvelia.Paths.*;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -49,15 +56,48 @@ public class CrearExamen {
 	// HACER CICLO DEL 1 AL 5 
 	
 	public static void agregarPregunta(int indice, String puntaje) throws InterruptedException {
-		//
+		
+		// Agrego puntaje
+		driver.findElement(Paths.notaDeAprobacion).sendKeys("5");
+		
+		driver.findElement(Paths.guardarDatos).click();
+		
+		// selecciono el tipo de pregunta
 		Select select = new Select(driver.findElement(By.id("tipoPregunta")));
 		// USAR INDICE
 		select.selectByIndex(indice);
 		Thread.sleep(1000);
 		//
-		//driver.findElement(Paths.agregarPregunta).click();
-		// Agrego puntaje
-		//driver.findElement(Paths.puntaje).sendKeys(puntaje);
+		//
+		
+		ScriptEngineManager sem = new ScriptEngineManager();
+		ScriptEngine se = sem.getEngineByName("JavaScript");
+		try {
+			se.eval("var miEditor=CKEDITOR.instances[\"cke_1_contents\"];\n"
+					+ "var texto = \"Pregunta 1\";\n"
+					+ "miEditor.setData(miEditor.getData()+\"&nbsp;\"+texto);"
+					+ "console.log('HOLAAAAAAAAAA');");
+			
+			Thread.sleep(10000);
+		} catch (ScriptException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//
+		//
+		driver.findElement(Paths.agregarPregunta).click();
+		
+		driver.findElement(Paths.puntaje).sendKeys(puntaje);
+		
+		
+		// preparo la publicacion
+		driver.findElement(Paths.prepararPublicacion).click();
+		
+		driver.findElement(Paths.publicarYReservarEvaluacion).click();
+		
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
 		
 		/*
 		//
@@ -99,11 +139,11 @@ public class CrearExamen {
 		crearExamen(tituloExamen);
 		Thread.sleep(1000);
 		agregarPregunta(2, "1");
-		driver.findElement(Paths.agregarPregunta).click();
+		//driver.findElement(Paths.agregarPregunta).click();
 		//opcionMultiple("correcta", "incorrecta");
-		verdaderoFalso(true);
+		//verdaderoFalso(true);
 		// Agrego puntaje
-		driver.findElement(Paths.puntaje).sendKeys("1");
+		//driver.findElement(Paths.puntaje).sendKeys("1");
 		//
 		//driver.findElement(Paths.mezclarAlAzar).click();
 		//

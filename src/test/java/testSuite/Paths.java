@@ -25,6 +25,10 @@ public class Paths {
 	//*[@id="configEx"]
 	public static By agregarPregunta = By.xpath("//*[@id=\"configEx\"]");
 	public static By puntaje = By.xpath("//*[@id=\"puntuacion\"]");
+	public static By notaDeAprobacion = By.xpath("//*[@id=\"NotaAprobar\"]");
+	
+	public static By prepararPublicacion = By.xpath("//*[@id=\"contenido\"]/fieldset/div[3]/button");
+	public static By publicarYReservarEvaluacion = By.xpath("//*[@id=\"contenido\"]/fieldset/div/div/div/button");
 	
 	// Opcion multiple
 	public static By opcionCorrecta = By.xpath("//*[@id=\"opciones\"]");
