@@ -69,7 +69,7 @@ public class CrearExamen {
 		Thread.sleep(1000);
 		//
 		//
-		
+		/*
 		ScriptEngineManager sem = new ScriptEngineManager();
 		ScriptEngine se = sem.getEngineByName("JavaScript");
 		try {
@@ -83,13 +83,14 @@ public class CrearExamen {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 		
 		//
 		//
 		driver.findElement(Paths.agregarPregunta).click();
 		
 		driver.findElement(Paths.puntaje).sendKeys(puntaje);
-		
+		driver.findElement(Paths.aceptar).click();
 		
 		// preparo la publicacion
 		driver.findElement(Paths.prepararPublicacion).click();
@@ -143,7 +144,7 @@ public class CrearExamen {
 		//opcionMultiple("correcta", "incorrecta");
 		//verdaderoFalso(true);
 		// Agrego puntaje
-		//driver.findElement(Paths.puntaje).sendKeys("1");
+		//driver.findElement(Paths.puntaje).sendKeys("10");
 		//
 		//driver.findElement(Paths.mezclarAlAzar).click();
 		//
