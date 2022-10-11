@@ -24,11 +24,14 @@ import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -183,8 +186,9 @@ public class TestEvelia {
 	
 	@Test
 	public void crearExamen2() throws IOException, InterruptedException {
-		testSuite.CrearExamen.crearExamenCompleto();
-		//testSuite.RendirExamen.rendirExamenCompleto();
+		//testSuite.CrearExamen.crearExamenCompleto();
+		//Thread.sleep(3000);
+		testSuite.RendirExamen.rendirExamenCompleto();
 	}
 }
 
