@@ -28,6 +28,8 @@ public class TestSuite {
 	@Test
 	public void test() throws InterruptedException {
 		CrearExamen.crearExamenCompleto();
+		Thread.sleep(1000);
+		RendirExamen.rendirExamenCompleto();
 	}
 	
 }

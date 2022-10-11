@@ -45,11 +45,8 @@ public class Paths {
 	public static By respuesta = By.xpath("//*[@id=\"respuesta\"]");
 	
 	// Asociacion de terminos
-	public static By primerMiembroPareja1 = By.xpath("//*[@id=\"parejaA\"]");
-	public static By segundoMiembroPareja1 = By.xpath("//*[@id=\"parejaB\"]");
-	
-	public static By primerMiembroPareja2 = By.xpath("//*[@id=\"parejaA\"]");
-	public static By segundoMiembroPareja2 = By.xpath("//*[@id=\"parejaB\"]");
+	public static By primerMiembroPareja = By.xpath("//*[@id=\"parejaA\"]");
+	public static By segundoMiembroPareja = By.xpath("//*[@id=\"parejaB\"]");
 	
 	// Formato tabla
 	public static By pregunta1 = By.xpath("//*[@id=\"preguntasFT\"]");
@@ -69,23 +66,35 @@ public class Paths {
 	public static By evalAlumno = By.xpath("//*[@id=\"listado\"]/div[9]/a");
 	
 	// rendirExamen
-	public static By rendirExamen = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[1]/td[4]/center/button");
+	public static By rendirExamen = By.xpath("//*[@id=\"examenDisp\"]/tbody/tr[1]/td[4]/div/button");
 	
 	//OPCION MULTIPLE
 	public static By opcion1 = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div[1]/div/div[1]/label");
 	public static By opcion2 = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div[2]/div/div[1]/label");
 	
 	// siguiente
-	public static By siguiente = By.xpath("//*[@id=\"pregunta\"]/div[3]/div[2]/center/button");
+	public static By siguiente = By.xpath("//*[@id=\"pregunta\"]/div[4]/div[2]/div/button");
 	
 	// VERDADERO FALSO
-	public static By respVerdadero = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/div[1]/label");
-	public static By respFalso = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div/div[2]/label");
+	public static By respVerdadero = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div[1]/div[1]/label");
+	public static By respFalso = By.xpath("//*[@id=\"tablaPreguntaEx\"]/div/div[2]/div[1]/div[2]/label");
+	
+	//*[@id="rtaVF2"]
+	//*[@id="rtaVF2"]
 	
 	// numerica calculada
 	public static By respNumCalc = By.xpath("//*[@id=\"rtaNC3\"]");
 	
 	// entregar
 	public static By entregar = By.xpath("//*[@id=\"FinalizExamen\"]");
+	
+	public static By ventParaSalir = By.xpath("//*[@id=\"banner\"]/nav/div[2]/button");
+	public static By salir = By.xpath("//*[@id=\"banner\"]/nav/div[2]/div/div/div[2]/a[6]");
+	
+	public static By disponibleDesde = By.xpath("//*[@id=\"fechaInicioEval\"]");
+	public static By disponibleHasta = By.xpath("//*[@id=\"fechaFinEval\"]");
+	
+	//*[@id="contenido"]/fieldset/div/div/div/button
+	//*[@id="contenido"]/fieldset/div[3]/button
 
 }
