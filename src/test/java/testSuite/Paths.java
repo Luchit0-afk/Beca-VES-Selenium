@@ -10,9 +10,12 @@ public class Paths {
 	public static By acceder = By.xpath("//*[@id=\"Ingresar\"]");
 	
 	// Ingreso
-	public static By aula = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[3]/a/b");
-	public static By comision = By.xpath("//*[@id=\"contenido\"]/b[5]/a");
-	public static By evaluaciones = By.xpath("//*[@id=\"listado\"]/div[10]/a/span");
+	public static By aulaDoc = By.xpath("//*[@id=\"contenido\"]/ul[2]/li[3]/a/b");
+	public static By aulaAlum = By.xpath("//*[@id=\"contenido\"]/ul[3]/li[4]/a/b");
+	public static By comisionDoc = By.xpath("//*[@id=\"contenido\"]/b[5]/a");
+	public static By comisionAlum = By.xpath("//*[@id=\"contenido\"]/b[5]/a");
+	public static By evaluacionesDoc = By.xpath("//*[@id=\"listado\"]/div[10]/a/span");
+	public static By evaluacionesAlum = By.xpath("//*[@id=\"listado\"]/div[9]/a");
 	
 	// Crear Examen
 	public static By crearExamen = By.xpath("//*[@id=\"contenido\"]/fieldset[1]/button[1]");
