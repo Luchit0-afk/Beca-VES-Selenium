@@ -186,9 +186,9 @@ public class TestEvelia {
 	
 	@Test
 	public void crearExamen2() throws IOException, InterruptedException {
-		//testSuite.CrearExamen.crearExamenCompleto();
-		//Thread.sleep(3000);
-		//testSuite.RendirExamen.rendirExamenCompleto();
+		testSuite.CrearExamen.crearExamenCompleto();
+		Thread.sleep(1000);
+		testSuite.RendirExamen.rendirExamenCompleto();
 	}
 }
 
