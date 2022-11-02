@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd ../
-mvn install
+mvn test -Dtest=TestSuite
