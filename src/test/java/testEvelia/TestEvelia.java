@@ -20,6 +20,7 @@ import testEvelia.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
@@ -28,12 +29,14 @@ import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import tools.WriteExcelFile;
 import tools.ReadExcelFile;
@@ -78,7 +81,7 @@ public class TestEvelia {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	//@Test
+	@Test
 	public void iniciarSesionDocente() throws IOException, InterruptedException {
 		TestIniciarSesion.iniciarSesion(true);
 	}
@@ -184,7 +187,7 @@ public class TestEvelia {
 		CrearExamen.crearExamen("Test123");
 	}
 	
-	@Test
+//	@Test
 	public void crearExamen2() throws IOException, InterruptedException {
 		testSuite.CrearExamen.crearExamenCompleto();
 		Thread.sleep(1000);
