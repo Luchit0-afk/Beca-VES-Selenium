@@ -68,6 +68,8 @@ public class RendirExamen {
 		numericaCalculada( String.valueOf( num ) );
 		entregar();
 		
+		Thread.sleep(1000);
+		
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 		

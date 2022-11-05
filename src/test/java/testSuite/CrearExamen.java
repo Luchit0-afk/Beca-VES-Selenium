@@ -10,8 +10,8 @@ import static testSuite.TestSuite.driver;
 
 public class CrearExamen {
 
-	private static String usuarioDocente = "1110100";
-	private static String contraseniaDocente = "10100";
+	private static String usuarioDocente = "1110102";
+	private static String contraseniaDocente = "10102";
 	private static String tituloExamen = "AAAAA";
 	private static String notaDeAprobacion = "5.0";
 
@@ -79,6 +79,8 @@ public class CrearExamen {
 	private static void publicarEvaluacion() throws InterruptedException {
 		driver.findElement( Paths.prepararPublicacion ).click();
 		driver.findElement( Paths.publicarYReservarEvaluacion ).click();
+		
+		Thread.sleep(5000);
 		
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
